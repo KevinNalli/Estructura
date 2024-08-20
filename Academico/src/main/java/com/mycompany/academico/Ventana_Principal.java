@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  * @author SCIS2-03
  */
 public class Ventana_Principal extends javax.swing.JFrame {
-    int[] menores = new int[5];
+    int[] menores;
     int[] mayores = new int[5];
     int[] viejos = new int[5];
     /**
@@ -19,6 +19,8 @@ public class Ventana_Principal extends javax.swing.JFrame {
      */
     public Ventana_Principal() {
         initComponents();
+        Create.setEnabled(false);
+        Search.setEnabled(false);
     }
 
     /**
@@ -33,6 +35,7 @@ public class Ventana_Principal extends javax.swing.JFrame {
         Tittle = new javax.swing.JLabel();
         Create = new javax.swing.JButton();
         Search = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +55,13 @@ public class Ventana_Principal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Tamaño");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -65,7 +75,9 @@ public class Ventana_Principal extends javax.swing.JFrame {
                 .addComponent(Create)
                 .addGap(59, 59, 59)
                 .addComponent(Search)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,7 +87,8 @@ public class Ventana_Principal extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Create)
-                    .addComponent(Search))
+                    .addComponent(Search)
+                    .addComponent(jButton1))
                 .addContainerGap(211, Short.MAX_VALUE))
         );
 
@@ -123,24 +136,20 @@ public class Ventana_Principal extends javax.swing.JFrame {
     String menoresf = " ";
     String viejosf = " ";
     private void SearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SearchMouseClicked
-        
-        for(int i = 0; i<=4; i++){
-            
-            if(mayores[i] != 0){
-                mayoresf = mayoresf + " "+mayores[i];
-            }
-            
-            if(menores[i] != 0){
-                menoresf = menoresf + " "+menores[i];
-            }
-            
-            if(viejos[i] != 0){
-                viejosf = viejosf + " "+viejos[i];
-            }
-        }
-        System.out.println(menoresf + "\n" + mayoresf + "\n"+ viejosf);
-                         
+        JOptionPane.showMessageDialog( rootPane,"Tamaño de los arrays: " + menores.length +" " + mayores.length + " " + viejos.length);     
     }//GEN-LAST:event_SearchMouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int tme =Integer.parseInt(JOptionPane.showInputDialog(rootPane, "Tamaño muestra de menores"));
+        int tma =Integer.parseInt(JOptionPane.showInputDialog(rootPane, "Tamaño muestra de mayores"));
+        int ta =Integer.parseInt(JOptionPane.showInputDialog(rootPane, "Tamaño muestra de adultos mayores"));
+        menores = new int[tme];
+        mayores = new int[tma];
+        viejos = new int[ta];
+        jButton1.setEnabled(false);
+        Create.setEnabled(true);
+        Search.setEnabled(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     
@@ -159,5 +168,6 @@ public class Ventana_Principal extends javax.swing.JFrame {
     private javax.swing.JButton Create;
     private javax.swing.JButton Search;
     private javax.swing.JLabel Tittle;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
