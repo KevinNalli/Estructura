@@ -54,6 +54,11 @@ public class Ventana extends javax.swing.JFrame {
 
         analizar.setText("Analizar Informacion");
         analizar.setEnabled(false);
+        analizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                analizarActionPerformed(evt);
+            }
+        });
 
         crear.setText("Crear Menú");
         crear.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +118,14 @@ public class Ventana extends javax.swing.JFrame {
         objmenu.ingresarDatos();
         analizar.setEnabled(true);
     }//GEN-LAST:event_ingresarActionPerformed
+
+    private void analizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analizarActionPerformed
+        objmenu.analizar();
+        
+        
+        
+        
+    }//GEN-LAST:event_analizarActionPerformed
     /*
      * @param args the command line arguments
      */
