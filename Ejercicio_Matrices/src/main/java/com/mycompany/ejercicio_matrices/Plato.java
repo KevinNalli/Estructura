@@ -5,6 +5,7 @@ public class Plato {
     private String Name;
     private int price;
     private String ingredients;
+    private int production;
 
     public Plato() {
     }
@@ -31,6 +32,14 @@ public class Plato {
 
     public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
+    }
+
+    public int getProduction() {
+        return production;
+    }
+
+    public void setProduction(int production) {
+        this.production = production;
     }
      
     
