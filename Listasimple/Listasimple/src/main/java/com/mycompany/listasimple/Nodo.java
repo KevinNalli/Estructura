@@ -6,9 +6,23 @@ package com.mycompany.listasimple;
 
 /**
  *
- * @author SCIS2-10
+ * @author SCIS2-01
  */
 public class Nodo {
+
+    /**
+     * @return the enlace
+     */
+    public Nodo getEnlace() {
+        return enlace;
+    }
+
+    /**
+     * @param enlace the enlace to set
+     */
+    public void setEnlace(Nodo enlace) {
+        this.enlace = enlace;
+    }
 
     /**
      * @return the nombre
@@ -57,18 +71,7 @@ public class Nodo {
     private float promedio;
     
     private Nodo enlace;
-
-    /**
-     * @return the enlace
-     */
-    public Nodo getEnlace() {
-        return enlace;
-    }
-
-    /**
-     * @param enlace the enlace to set
-     */
-    public void setEnlace(Nodo enlace) {
-        this.enlace = enlace;
-    }
+    
+    
+    
 }
