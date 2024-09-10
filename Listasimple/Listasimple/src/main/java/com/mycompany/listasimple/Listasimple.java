@@ -103,7 +103,6 @@ public class Listasimple {
         int a = 0;
         int b = 1;
         int c = 1;
-        
         if(inicio==null){
             JOptionPane.showMessageDialog(null, "La lista esta vacia");   
             inicio=nuevo;      
@@ -112,8 +111,6 @@ public class Listasimple {
             
             String name = JOptionPane.showInputDialog("Ingrese el nombre del Estudiante");
             while(temporal.getEnlace()!=null){
-                System.out.println(temporal.getNombre().toLowerCase());
-                System.out.println(name.toLowerCase());
                 if(temporal.getNombre().toLowerCase().equals(name.toLowerCase())){
                     a = c;
                 }
@@ -144,6 +141,23 @@ public class Listasimple {
                 }
             }        
         }
+    }
+    
+    public void eliminarPorPosicion(){
+        int a=1;
+        int b = 1;
+        int c = 1;
+        int d = 1;
+        Nodo temporal2 = null;
+        a = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion a eliminar"));
+        Nodo temporal = inicio;
+        while(temporal.getEnlace()!=null){
+            temporal = temporal.getEnlace();
+            if(b==a-1){
+                temporal2 = temporal.getEnlace();
+            }
+        }
+        temporal.setEnlace(temporal2.getEnlace());
     }
     
     
