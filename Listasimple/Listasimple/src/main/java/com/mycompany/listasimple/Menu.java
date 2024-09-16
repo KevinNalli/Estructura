@@ -39,8 +39,12 @@ public class Menu extends javax.swing.JFrame {
         insertarfinal = new javax.swing.JButton();
         addByPosition = new javax.swing.JButton();
         addByData = new javax.swing.JButton();
+<<<<<<< HEAD
         ordenar = new javax.swing.JButton();
         create = new javax.swing.JButton();
+=======
+        deleteByPosition = new javax.swing.JButton();
+>>>>>>> 6bfca273931f197b519a7e17a817dc66683b82d7
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,6 +91,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+<<<<<<< HEAD
         ordenar.setText("Ordenar Alfabeticamente");
         ordenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +103,12 @@ public class Menu extends javax.swing.JFrame {
         create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 createActionPerformed(evt);
+=======
+        deleteByPosition.setText("Eliminar Posición");
+        deleteByPosition.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteByPositionActionPerformed(evt);
+>>>>>>> 6bfca273931f197b519a7e17a817dc66683b82d7
             }
         });
 
@@ -111,6 +122,7 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
+<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
@@ -132,6 +144,33 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(insertarfinal))
                 .addGap(39, 39, 39))
+=======
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(addByPosition))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                            .addComponent(edad)
+                            .addComponent(promedio))
+                        .addGap(66, 66, 66)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addByData)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(crearinicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(insertarfinal)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(deleteByPosition)))))
+                .addGap(43, 43, 43))
+>>>>>>> 6bfca273931f197b519a7e17a817dc66683b82d7
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,6 +179,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGap(8, 8, 8)
                         .addComponent(crearinicio)
                         .addGap(27, 27, 27)
@@ -171,6 +211,38 @@ public class Menu extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(create)))
                 .addContainerGap(30, Short.MAX_VALUE))
+=======
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(crearinicio)
+                                .addGap(27, 27, 27)
+                                .addComponent(jButton2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
+                                .addGap(29, 29, 29)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(promedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(insertarfinal)))
+                        .addGap(59, 59, 59))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(addByPosition)
+                        .addGap(6, 6, 6)))
+                .addComponent(addByData)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(deleteByPosition)
+                .addContainerGap(19, Short.MAX_VALUE))
+>>>>>>> 6bfca273931f197b519a7e17a817dc66683b82d7
         );
 
         pack();
@@ -218,6 +290,7 @@ public class Menu extends javax.swing.JFrame {
              Float.parseFloat(promedio.getText()));
     }//GEN-LAST:event_addByDataActionPerformed
 
+<<<<<<< HEAD
     private void ordenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenarActionPerformed
         objlista.ordenar();
     }//GEN-LAST:event_ordenarActionPerformed
@@ -225,6 +298,11 @@ public class Menu extends javax.swing.JFrame {
     private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
         objlista.crear();
     }//GEN-LAST:event_createActionPerformed
+=======
+    private void deleteByPositionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteByPositionActionPerformed
+        objlista.eliminarPorPosicion();
+    }//GEN-LAST:event_deleteByPositionActionPerformed
+>>>>>>> 6bfca273931f197b519a7e17a817dc66683b82d7
 
     /**
      * @param args the command line arguments
@@ -265,7 +343,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton addByData;
     private javax.swing.JButton addByPosition;
     private javax.swing.JButton crearinicio;
+<<<<<<< HEAD
     private javax.swing.JButton create;
+=======
+    private javax.swing.JButton deleteByPosition;
+>>>>>>> 6bfca273931f197b519a7e17a817dc66683b82d7
     private javax.swing.JTextField edad;
     private javax.swing.JButton insertarfinal;
     private javax.swing.JButton jButton2;

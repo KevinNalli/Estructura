@@ -105,7 +105,6 @@ public class Listasimple {
         int a = 0;
         int b = 1;
         int c = 1;
-        
         if(inicio==null){
             JOptionPane.showMessageDialog(null, "La lista esta vacia");   
             inicio=nuevo;      
@@ -114,8 +113,6 @@ public class Listasimple {
             
             String name = JOptionPane.showInputDialog("Ingrese el nombre del Estudiante");
             while(temporal.getEnlace()!=null){
-                System.out.println(temporal.getNombre().toLowerCase());
-                System.out.println(name.toLowerCase());
                 if(temporal.getNombre().toLowerCase().equals(name.toLowerCase())){
                     a = c;
                 }
@@ -148,6 +145,7 @@ public class Listasimple {
         }
     }
     
+<<<<<<< HEAD
     public void ordenar(){
          if (inicio == null) {
             JOptionPane.showMessageDialog(null, "No hay registros para ordenar");
@@ -187,6 +185,25 @@ public class Listasimple {
 
         JOptionPane.showMessageDialog(null, "Lista ordenada correctamente");
     }
+=======
+    public void eliminarPorPosicion(){
+        int a=1;
+        int b = 1;
+        int c = 1;
+        int d = 1;
+        Nodo temporal2 = null;
+        a = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion a eliminar"));
+        Nodo temporal = inicio;
+        while(temporal.getEnlace()!=null){
+            temporal = temporal.getEnlace();
+            if(b==a-1){
+                temporal2 = temporal.getEnlace();
+            }
+        }
+        temporal.setEnlace(temporal2.getEnlace());
+    }
+    
+>>>>>>> 6bfca273931f197b519a7e17a817dc66683b82d7
     
     public void crear(){
         String[] abecedario={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"};
