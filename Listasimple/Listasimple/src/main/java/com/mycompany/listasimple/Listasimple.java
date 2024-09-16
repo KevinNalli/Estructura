@@ -4,6 +4,8 @@
 
 package com.mycompany.listasimple;
 
+
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -146,7 +148,62 @@ public class Listasimple {
         }
     }
     
+    public void ordenar(){
+         if (inicio == null) {
+            JOptionPane.showMessageDialog(null, "No hay registros para ordenar");
+            return;
+        }
+
+        // Paso 1: Contar los nodos
+        int c = 0;
+        Nodo temporal = inicio;
+        while (temporal != null) {
+            c++;
+            temporal = temporal.getEnlace();
+        }
+
+        // Paso 2: Crear un arreglo para los nodos
+        Nodo[] nodos = new Nodo[c];
+        temporal = inicio;
+
+        // Paso 3: Rellenar el arreglo con los nodos completos
+        for (int i = 0; i < c; i++) {
+            nodos[i] = temporal;  // Guardar el nodo completo
+            temporal = temporal.getEnlace();
+        }
+
+        // Paso 4: Ordenar el arreglo de nodos por el nombre alfabéticamente
+        Arrays.sort(nodos, (n1, n2) -> n1.getNombre().compareTo(n2.getNombre()));
+
+        // Paso 5: Reconstruir la lista enlazada con los nodos ordenados
+        inicio = nodos[0];  // El primer nodo del array será el nuevo inicio
+        temporal = inicio;  // Reiniciamos temporal para reconstruir la lista
+
+        for (int i = 1; i < c; i++) {
+            temporal.setEnlace(nodos[i]);  // Establecer el enlace al siguiente nodo
+            temporal = temporal.getEnlace();  // Avanzar al siguiente nodo
+        }
+        temporal.setEnlace(null);  // El último nodo debe apuntar a null
+
+        JOptionPane.showMessageDialog(null, "Lista ordenada correctamente");
+    }
     
+    public void crear(){
+        String[] abecedario={"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","w","x","y","z"};
+        int nods = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de estudiantes "));
+        String name = "";
+        double prom = 0;
+        for(int i = 0; i<nods; i++){
+            for(int j = 0; j<5; j++){
+                int numero = (int) (Math.random() * abecedario.length);
+                name += abecedario[numero];
+                prom =  Math.random() * 5 + 1;
+            }
+            int edad = (int) (Math.random() * 50)+1;
+            insertarFinal(name, edad, nods);
+            name = " ";
+        }
+    }
     
     
     public void consultar(){    

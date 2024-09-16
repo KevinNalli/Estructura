@@ -39,6 +39,8 @@ public class Menu extends javax.swing.JFrame {
         insertarfinal = new javax.swing.JButton();
         addByPosition = new javax.swing.JButton();
         addByData = new javax.swing.JButton();
+        ordenar = new javax.swing.JButton();
+        create = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +87,20 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        ordenar.setText("Ordenar Alfabeticamente");
+        ordenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ordenarActionPerformed(evt);
+            }
+        });
+
+        create.setText("Crear Aleatoriamente");
+        create.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,11 +115,14 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
-                    .addComponent(edad)
-                    .addComponent(promedio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE)
+                        .addComponent(edad)
+                        .addComponent(promedio))
+                    .addComponent(ordenar)
+                    .addComponent(create))
                 .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addByData)
@@ -142,9 +161,16 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(insertarfinal)))
                 .addGap(18, 18, 18)
                 .addComponent(addByPosition)
-                .addGap(18, 18, 18)
-                .addComponent(addByData)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(addByData))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(ordenar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(create)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -192,6 +218,14 @@ public class Menu extends javax.swing.JFrame {
              Float.parseFloat(promedio.getText()));
     }//GEN-LAST:event_addByDataActionPerformed
 
+    private void ordenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenarActionPerformed
+        objlista.ordenar();
+    }//GEN-LAST:event_ordenarActionPerformed
+
+    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
+        objlista.crear();
+    }//GEN-LAST:event_createActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -231,6 +265,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton addByData;
     private javax.swing.JButton addByPosition;
     private javax.swing.JButton crearinicio;
+    private javax.swing.JButton create;
     private javax.swing.JTextField edad;
     private javax.swing.JButton insertarfinal;
     private javax.swing.JButton jButton2;
@@ -239,6 +274,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nombre;
+    private javax.swing.JButton ordenar;
     private javax.swing.JTextField promedio;
     // End of variables declaration//GEN-END:variables
 }
