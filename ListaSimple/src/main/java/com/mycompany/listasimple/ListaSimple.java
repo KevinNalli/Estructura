@@ -114,8 +114,6 @@ public class ListaSimple {
             JOptionPane.showMessageDialog(null, "No hay registros para ordenar");
             return;
         }
-
-        // Paso 1: Contar los nodos
         int c = 0;
         Nodo temporal = inicio;
         while (temporal != null) {
@@ -123,28 +121,23 @@ public class ListaSimple {
             temporal = temporal.getEnlace();
         }
 
-        // Paso 2: Crear un arreglo para los nodos
         Nodo[] nodos = new Nodo[c];
         temporal = inicio;
 
-        // Paso 3: Rellenar el arreglo con los nodos completos
         for (int i = 0; i < c; i++) {
-            nodos[i] = temporal;  // Guardar el nodo completo
+            nodos[i] = temporal;
             temporal = temporal.getEnlace();
         }
-
-        // Paso 4: Ordenar el arreglo de nodos por el nombre alfabéticamente
         Arrays.sort(nodos, (n1, n2) -> n1.getName().compareTo(n2.getName()));
 
-        // Paso 5: Reconstruir la lista enlazada con los nodos ordenados
-        inicio = nodos[0];  // El primer nodo del array será el nuevo inicio
-        temporal = inicio;  // Reiniciamos temporal para reconstruir la lista
+        inicio = nodos[0]; 
+        temporal = inicio; 
 
         for (int i = 1; i < c; i++) {
-            temporal.setEnlace(nodos[i]);  // Establecer el enlace al siguiente nodo
-            temporal = temporal.getEnlace();  // Avanzar al siguiente nodo
+            temporal.setEnlace(nodos[i]);  
+            temporal = temporal.getEnlace(); 
         }
-        temporal.setEnlace(null);  // El último nodo debe apuntar a null
+        temporal.setEnlace(null); 
 
         JOptionPane.showMessageDialog(null, "Lista ordenada correctamente");
     }
