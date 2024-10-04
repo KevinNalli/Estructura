@@ -51,7 +51,9 @@ public class Trabajo_En_Clase{
         Person temporal = inicio;
         while(temporal!=null){
             if(temporal.getEdad()<18){
-                
+                if(temporal.getAtras()==null){
+                    inicio=temporal.getAdelante();
+                }
                 if(temporal.getAtras()!=null){
                     temporal.getAtras().setAdelante(temporal.getAdelante());    
                 }
@@ -80,7 +82,6 @@ public class Trabajo_En_Clase{
         }
     }
     public void buscarPosicion(){
-        int c = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese Posicion"));
         int n = 1;
         int a = 1;
         Person temporal = inicio;
@@ -88,6 +89,7 @@ public class Trabajo_En_Clase{
             temporal = temporal.getAdelante();
             a++;
         }
+        int c = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese Posicion, hay "+ a+ " posiciones"));
         temporal = inicio;
         if(c>a){
             JOptionPane.showMessageDialog(null, "No existe tal posición");
